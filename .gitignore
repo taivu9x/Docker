@@ -1,5 +1,1 @@
-mongo/*
-kafka/*
-zookeeper/*
-kibana/*
-elasticsearch/*
+storage

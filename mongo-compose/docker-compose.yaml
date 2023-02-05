@@ -1,0 +1,15 @@
+# Use postgres/example user/password credentials
+version: "3.8"
+services:
+  # mongodb
+  mongodb:
+    image: mongo:latest
+    container_name: my-mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      # seeding scripts
+      - ./storage/mongo/entrypoint:/docker-entrypoint-initdb.d
+      # named volumes
+      - ./storage/mongo/db:/data/db
+      - ./storage/mongo/config:/data/configdb
